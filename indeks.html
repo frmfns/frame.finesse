@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frame Finesse | Jasa Editing Profesional</title>
+    <style>
+        /* === RESET & BASE STYLES === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-orange: #FF6B00;
+            --secondary-orange: #FF8E3C;
+            --white: #FFFFFF;
+            --dark: #1A1A1A;
+            --light-bg: #F9F9F9;
+            --gray-text: #666666;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--dark);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* === NAVBAR === */
+        header {
+            background-color: var(--white);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo img {
+            max-height: 40px; 
+            width: auto;
+            vertical-align: middle;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary-orange);
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-orange) 0%, var(--secondary-orange) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 100px 20px 120px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-logo {
+            max-height: 200px; 
+            width: auto;
+            margin-bottom: 30px;
+            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.2));
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 35px;
+            background-color: var(--white);
+            color: var(--primary-orange);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn:hover {
+            background-color: var(--dark);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* === SERVICES SECTION === */
+        .services {
+            padding: 100px 5%;
+            background-color: var(--light-bg);
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: var(--dark);
+            text-align: center;
+        }
+
+        .section-title span {
+            color: var(--primary-orange);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            padding: 40px 25px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-bottom: 5px solid var(--primary-orange);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(255, 107, 0, 0.15);
+        }
+
+        .icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .service-card p {
+            color: var(--gray-text);
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+        }
+
+        .price-btn {
+            background-color: var(--primary-orange);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(255, 107, 0, 0.2);
+        }
+
+        .price-btn:hover {
+            background-color: var(--dark);
+            transform: scale(1.05);
+        }
+
+        /* === PORTFOLIO SECTION === */
+        .portfolio {
+            padding: 100px 5%;
+            background-color: var(--white);
+            text-align: center;
+        }
+
+        .filter-container {
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .filter-btn {
+            background-color: var(--light-bg);
+            color: var(--dark);
+            padding: 8px 20px;
+            border: 2px solid transparent;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover {
+            background-color: #ffe8d6;
+        }
+
+        .filter-btn.active {
+            background-color: var(--primary-orange);
+            color: var(--white);
+            box-shadow: 0 4px 10px rgba(255, 107, 0, 0.3);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .portfolio-item {
+            background-color: var(--light-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            text-align: left;
+            display: block; 
+            cursor: pointer;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .portfolio-img {
+            width: 100%;
+            height: 220px;
+            background-color: #e0e0e0;
+            position: relative;
+            overflow: hidden;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+
+        .portfolio-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            color: var(--white);
+            background: rgba(0, 0, 0, 0.5);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .portfolio-item:hover .play-icon {
+            background: var(--primary-orange);
+        }
+
+        .category-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--primary-orange);
+            color: var(--white);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            z-index: 2;
+        }
+
+        .portfolio-info {
+            padding: 20px;
+        }
+
+        .portfolio-info h3 {
+            font-size: 1.2rem;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .portfolio-info p {
+            font-size: 0.9rem;
+            color: var(--gray-text);
+        }
+
+        /* === MODAL / LIGHTBOX GENERAL === */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(5px);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            flex-direction: column;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 75vh;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            object-fit: contain;
+        }
+
+        .modal-video {
+            width: 80%;
+            max-width: 800px;
+            height: 450px;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: var(--white);
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+            z-index: 2100;
+        }
+
+        .modal-close:hover {
+            color: var(--primary-orange);
+        }
+
+        .modal-caption {
+            margin-top: 15px;
+            color: var(--white);
+            text-align: center;
+            font-size: 1.1rem;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 8px 20px;
+            border-radius: 20px;
+        }
+
+        /* === PRICE LIST MODAL CUSTOM STYLES === */
+        .price-modal-card {
+            background-color: var(--white);
+            width: 90%;
+            max-width: 550px;
+            border-radius: 15px;
+            padding: 35px 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            position: relative;
+            text-align: left;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .price-modal-card h3 {
+            color: var(--primary-orange);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ffe8d6;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        .price-list-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px dashed #e0e0e0;
+        }
+
+        .price-list-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-name {
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 1rem;
+        }
+
+        .item-desc {
+            font-size: 0.85rem;
+            color: var(--gray-text);
+            display: block;
+        }
+
+        .item-price {
+            font-weight: bold;
+            color: var(--primary-orange);
+            font-size: 1.1rem;
+            white-space: nowrap;
+            margin-left: 15px;
+        }
+
+        .price-order-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background-color: #25D366;
+            color: var(--white);
+            padding: 12px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 25px;
+            transition: background-color 0.3s;
+        }
+
+        .price-order-btn:hover {
+            background-color: #128C7E;
+        }
+
+        /* === CONTACT SECTION === */
+        .contact {
+            padding: 100px 5%;
+            background-color: var(--light-bg);
+            text-align: center;
+        }
+
+        .contact p {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            color: var(--gray-text);
+            font-size: 1.1rem;
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 35px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-decoration: none;
+            color: var(--white);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-wa { background-color: #25D366; }
+        .btn-wa:hover { background-color: #128C7E; }
+
+        .btn-shopee { background-color: #EE4D2D; }
+        .btn-shopee:hover { background-color: #D73211; }
+
+        /* === FOOTER === */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        footer span {
+            color: var(--primary-orange);
+            font-weight: bold;
+        }
+
+        /* === RESPONSIVE DESIGN === */
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .hero h1 { font-size: 2.5rem; }
+            .services-grid, .portfolio-grid { grid-template-columns: 1fr; }
+            .contact-buttons { flex-direction: column; }
+            .contact-btn { width: 100%; }
+            .modal-video { width: 95%; height: 250px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <a href="#" class="logo">
+            <img src="NAVBAR.png" alt="Logo Frame Finesse">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="#layanan">Layanan</a></li>
+                <li><a href="#portofolio">Portofolio</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="beranda">
+        <img src="Icon Besar.png" alt="Logo Frame Finesse Besar" class="hero-logo">
+        <h1>Visual Terbaik Untuk Karyamu</h1>
+        <p>Hasilkan karya visual memukau dengan sentuhan editing profesional. Dari video sinematik, efek visual, hingga desain grafis berkelas.</p>
+        <a href="#layanan" class="btn">Lihat Layanan</a>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services" id="layanan">
+        <h2 class="section-title">Layanan <span>Unggulan</span> Kami</h2>
+        <div class="services-grid">
+            
+            <!-- Layanan 1: Photo Editing -->
+            <div class="service-card">
+                <div>
+                    <span class="icon">📸</span>
+                    <h3>Photo Editing & Retouching</h3>
+                    <p>Koreksi warna, manipulasi objek, dan penghalusan detail foto secara profesional.</p>
+                </div>
+                <button class="price-btn" onclick="openPriceModal('photo')">Daftar Harga 🏷️</button>
+            </div>
+
+            <!-- Layanan 2: Video Editing -->
+            <div class="service-card">
+                <div>
+                    <span class="icon">🎬</span>
+                    <h3>Video Editing & Grading</h3>
+                    <p>Pemotongan presisi, transisi dinamis, dan color grading mendetail untuk hasil sinematik.</p>
+                </div>
+                <button class="price-btn" onclick="openPriceModal('video')">Daftar Harga 🏷️</button>
+            </div>
+
+            <!-- Layanan 3: Motion Graphics -->
+            <div class="service-card">
+                <div>
+                    <span class="icon">✨</span>
+                    <h3>Motion Graphics & VFX</h3>
+                    <p>Menambahkan keyframing, efek visual (VFX), dan animasi grafis.</p>
+                </div>
+                <button class="price-btn" onclick="openPriceModal('motion')">Daftar Harga 🏷️</button>
+            </div>
+
+            <!-- Layanan 4: Desain Grafis -->
+            <div class="service-card">
+                <div>
+                    <span class="icon">🎨</span>
+                    <h3>Desain Grafis Digital</h3>
+                    <p>Pembuatan layout, pembuatan aset grafis, dan desain vektor tanpa batas.</p>
+                </div>
+                <button class="price-btn" onclick="openPriceModal('desain')">Daftar Harga 🏷️</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section class="portfolio" id="portofolio">
+        <h2 class="section-title">Hasil <span>Karya</span> Kami</h2>
+
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="semua">Semua</button>
+            <button class="filter-btn" data-filter="photo">Photo Editing</button>
+            <button class="filter-btn" data-filter="video">Video Editing</button>
+            <button class="filter-btn" data-filter="motion">Motion Graphics</button>
+            <button class="filter-btn" data-filter="desain">Desain Grafis</button>
+        </div>
+
+        <div class="portfolio-grid">
+            <!-- 1. Request Edit Foto-->
+            <div class="portfolio-item photo">
+                <div class="portfolio-img">
+                    <span class="category-badge">Photo Editing</span>
+                    <img src="Request Edit 1.jpg" alt="Edit Hapus Objek & Merapikan Foto">
+                </div>
+                <div class="portfolio-info">
+                    <h3>Request Edit Foto 1</h3>
+                    <p>Mengganti seragam, mengubah warna hijab, dan mengganti latar.</p>
+                </div>
+            </div>
+
+            <!-- 2. Request Edit Foto-->
+            <div class="portfolio-item photo">
+                <div class="portfolio-img">
+                    <span class="category-badge">Photo Editing</span>
+                    <img src="Request Edit 2.jpg" alt="Edit Hapus Objek & Merapikan Foto">
+                </div>
+                <div class="portfolio-info">
+                    <h3>Request Edit Foto 2</h3>
+                    <p>Merapikan bentukan dari slempang.</p>
+                </div>
+            </div>
+
+            <!-- 3. Request Edit Foto-->
+            <div class="portfolio-item photo">
+                <div class="portfolio-img">
+                    <span class="category-badge">Photo Editing</span>
+                    <img src="Request Edit 3.jpg" alt="Edit Hapus Objek & Merapikan Foto">
+                </div>
+                <div class="portfolio-info">
+                    <h3>Request Edit Foto 3</h3>
+                    <p>Retouch lipatan kertas, perbaikan warna, dan perbaikan struktur.</p>
+                </div>
+            </div>
+
+            <!-- 4. Request Edit Foto-->
+            <div class="portfolio-item photo">
+                <div class="portfolio-img">
+                    <span class="category-badge">Photo Editing</span>
+                    <img src="Request Edit 4.jpg" alt="Edit Hapus Objek & Merapikan Foto">
+                </div>
+                <div class="portfolio-info">
+                    <h3>Request Edit Foto 4</h3>
+                    <p>Menambahkan bagian foto yang terpotong.</p>
+                </div>
+            </div>
+
+            <!-- 5. Request Edit Foto-->
+            <div class="portfolio-item photo">
+                <div class="portfolio-img">
+                    <span class="category-badge">Photo Editing</span>
+                    <img src="Request Edit 5.jpg" alt="Edit Hapus Objek & Merapikan Foto">
+                </div>
+                <div class="portfolio-info">
+                    <h3>Request Edit Foto 5</h3>
+                    <p>Menghilangkan bayangan yang mengganggu.</p>
+                </div>
+            </div>
+
+            <!-- 6. Request Edit Foto-->
+            <div class="portfolio-item photo">
+                <div class="portfolio-img">
+                    <span class="category-badge">Photo Editing</span>
+                    <img src="Request Edit 6.jpg" alt="Edit Hapus Objek & Merapikan Foto">
+                </div>
+                <div class="portfolio-info">
+                    <h3>Request Edit Foto 6</h3>
+                    <p>Perbaikan perpektif pada gambar dan perbaikan warna.</p>
+                </div>
+            </div>
+
+            <!-- 7. Request Edit Foto-->
+            <div class="portfolio-item photo">
+                <div class="portfolio-img">
+                    <span class="category-badge">Photo Editing</span>
+                    <img src="Request Edit 7.jpg" alt="Edit Hapus Objek & Merapikan Foto">
+                </div>
+                <div class="portfolio-info">
+                    <h3>Request Edit Foto 7</h3>
+                    <p>Perbaikan lipatan pada kertas, perbaikan warna, dan struktur.</p>
+                </div>
+            </div>
+
+            <!-- 8. Request Edit Foto-->
+            <div class="portfolio-item photo">
+                <div class="portfolio-img">
+                    <span class="category-badge">Photo Editing</span>
+                    <img src="Request Edit 8.jpg" alt="Edit Hapus Objek & Merapikan Foto">
+                </div>
+                <div class="portfolio-info">
+                    <h3>Request Edit Foto 8</h3>
+                    <p>Hapus objek, mengganti langit, dan perbaikan cahaya.</p>
+                </div>
+            </div>
+
+            <!-- 9. Request Edit Foto-->
+            <div class="portfolio-item photo">
+                <div class="portfolio-img">
+                    <span class="category-badge">Photo Editing</span>
+                    <img src="Request Edit 9.jpg" alt="Edit Hapus Objek & Merapikan Foto">
+                </div>
+                <div class="portfolio-info">
+                    <h3>Request Edit Foto 9</h3>
+                    <p>Hapus objek, color grading, dan mengganti langit.</p>
+                </div>
+            </div>
+
+            <!-- 10. Request Edit Foto-->
+            <div class="portfolio-item photo">
+                <div class="portfolio-img">
+                    <span class="category-badge">Photo Editing</span>
+                    <img src="Request Edit 10.jpg" alt="Edit Hapus Objek & Merapikan Foto">
+                </div>
+                <div class="portfolio-info">
+                    <h3>Request Edit Foto 10</h3>
+                    <p>Mengganti kursi dengan sofa yang telah ditentukan.</p>
+                </div>
+            </div>
+
+            <!-- 11. Request Edit Foto-->
+            <div class="portfolio-item photo">
+                <div class="portfolio-img">
+                    <span class="category-badge">Photo Editing</span>
+                    <img src="Request Edit 11.jpg" alt="Edit Hapus Objek & Merapikan Foto">
+                </div>
+                <div class="portfolio-info">
+                    <h3>Request Edit Foto 11</h3>
+                    <p>Mengganti kursi dengan sofa yang telah ditentukan.</p>
+                </div>
+            </div>
+
+            <!-- 12. Request Edit Foto-->
+            <div class="portfolio-item photo">
+                <div class="portfolio-img">
+                    <span class="category-badge">Photo Editing</span>
+                    <img src="Request Edit 12.jpg" alt="Edit Hapus Objek & Merapikan Foto">
+                </div>
+                <div class="portfolio-info">
+                    <h3>Request Edit Foto 12</h3>
+                    <p>Perencanaan ruangan dengan memasukkan furniture dan perbaikan struktur ruangan.</p>
+                </div>
+            </div>
+
+            <!-- 13. Request Edit Foto-->
+            <div class="portfolio-item photo">
+                <div class="portfolio-img">
+                    <span class="category-badge">Photo Editing</span>
+                    <img src="Request Edit 13.jpg" alt="Edit Hapus Objek & Merapikan Foto">
+                </div>
+                <div class="portfolio-info">
+                    <h3>Request Edit Foto 13</h3>
+                    <p>Perencanaan ruangan dengan memasukkan furniture dan perbaikan struktur ruangan.</p>
+                </div>
+            </div>
+
+            <!-- 14. Request Edit Foto-->
+            <div class="portfolio-item photo">
+                <div class="portfolio-img">
+                    <span class="category-badge">Photo Editing</span>
+                    <img src="Request Edit 14.jpg" alt="Edit Hapus Objek & Merapikan Foto">
+                </div>
+                <div class="portfolio-info">
+                    <h3>Request Edit Foto 14</h3>
+                    <p>Perencanaan ruangan dengan memasukkan furniture dan perbaikan struktur ruangan.</p>
+                </div>
+            </div>
+
+            <!-- 15. Request Edit Foto-->
+            <div class="portfolio-item photo">
+                <div class="portfolio-img">
+                    <span class="category-badge">Photo Editing</span>
+                    <img src="Request Edit 15.jpg" alt="Edit Hapus Objek & Merapikan Foto">
+                </div>
+                <div class="portfolio-info">
+                    <h3>Request Edit Foto 15</h3>
+                    <p>Perencanaan ruangan dengan memasukkan furniture dan perbaikan struktur ruangan.</p>
+                </div>
+            </div>
+
+            <!-- 16. Request Edit Foto-->
+            <div class="portfolio-item photo">
+                <div class="portfolio-img">
+                    <span class="category-badge">Photo Editing</span>
+                    <img src="Request Edit 16.jpg" alt="Edit Hapus Objek & Merapikan Foto">
+                </div>
+                <div class="portfolio-info">
+                    <h3>Request Edit Foto 16</h3>
+                    <p>Perencanaan ruangan dengan memasukkan furniture dan perbaikan struktur ruangan.</p>
+                </div>
+            </div>
+
+            <!-- 17. Request Edit Foto-->
+            <div class="portfolio-item photo">
+                <div class="portfolio-img">
+                    <span class="category-badge">Photo Editing</span>
+                    <img src="Request Edit 17.jpg" alt="Edit Hapus Objek & Merapikan Foto">
+                </div>
+                <div class="portfolio-info">
+                    <h3>Request Edit Foto 17</h3>
+                    <p>Perencanaan ruangan dengan memasukkan furniture dan perbaikan struktur ruangan.</p>
+                </div>
+            </div>
+
+            <!-- 18. Request Edit Foto-->
+            <div class="portfolio-item photo">
+                <div class="portfolio-img">
+                    <span class="category-badge">Photo Editing</span>
+                    <img src="Request Edit 18.jpg" alt="Edit Hapus Objek & Merapikan Foto">
+                </div>
+                <div class="portfolio-info">
+                    <h3>Request Edit Foto 18</h3>
+                    <p>Perencanaan ruangan dengan memasukkan furniture dan perbaikan struktur ruangan.</p>
+                </div>
+            </div>
+
+
+            <!--Portofolio Video-->
+            <div class="portfolio-item video" data-video="video-vlog.mp4">
+                <div class="portfolio-img">
+                    <span class="category-badge">Video Editing</span>
+                    <span class="play-icon">▶</span>
+                    <img src="thumbnail-vlog.jpg" alt="Cinematic Vlog & Color Grading">
+                </div>
+                <div class="portfolio-info">
+                    <h3>Cinematic Vlog & Color Grading</h3>
+                    <p>Editing video perjalanan dengan transisi mulus dan pewarnaan (color grading) yang estetis.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item motion" data-video="CIne 2.mp4">
+                <div class="portfolio-img">
+                    <span class="category-badge">Motion Graphics</span>
+                    <span class="play-icon">▶</span>
+                    <img src="ThmbNail.png" alt="Logo Animation / Intro Youtube">
+                </div>
+                <div class="portfolio-info">
+                    <h3>Logo Animation / Intro Youtube</h3>
+                    <p>Menganimasikan aset logo statis menjadi bergerak dinamis dengan keyframing.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item motion" data-video="CIne 2.mp4">
+                <div class="portfolio-img">
+                    <span class="category-badge">Motion Graphics</span>
+                    <span class="play-icon">▶</span>
+                    <img src="ThmbNail.png" alt="Logo Animation / Intro Youtube">
+                </div>
+                <div class="portfolio-info">
+                    <h3>Logo Animation / Intro Youtube</h3>
+                    <p>Menganimasikan aset logo statis menjadi bergerak dinamis dengan keyframing.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item motion" data-video="CIne 2.mp4">
+                <div class="portfolio-img">
+                    <span class="category-badge">Motion Graphics</span>
+                    <span class="play-icon">▶</span>
+                    <img src="ThmbNail.png" alt="Logo Animation / Intro Youtube">
+                </div>
+                <div class="portfolio-info">
+                    <h3>Logo Animation / Intro Youtube</h3>
+                    <p>Menganimasikan aset logo statis menjadi bergerak dinamis dengan keyframing.</p>
+                </div>
+            </div>
+
+            <!--Desain 1-->
+            <div class="portfolio-item desain">
+                <div class="portfolio-img">
+                    <span class="category-badge">Desain Grafis</span>
+                    <img src="Spanduk Warung.jpg" alt="Desain Poster Promosi">
+                </div>
+                <div class="portfolio-info">
+                    <h3>Desain Spanduk Warung</h3>
+                    <p>Layout dan tata letak modern untuk kebutuhan kampanye produk di media sosial.</p>
+                </div>
+            </div>
+
+            <!--Desain 1-->
+            <div class="portfolio-item desain">
+                <div class="portfolio-img">
+                    <span class="category-badge">Desain Grafis</span>
+                    <img src="Poster -01.jpg" alt="Desain Poster Promosi">
+                </div>
+                <div class="portfolio-info">
+                    <h3>Desain Spanduk Warung</h3>
+                    <p>Layout dan tata letak modern untuk kebutuhan kampanye produk di media sosial.</p>
+                </div>
+            </div>
+
+            <!--Desain 3-->
+            <div class="portfolio-item desain">
+                <div class="portfolio-img">
+                    <span class="category-badge">Desain Grafis</span>
+                    <img src="Strawberry Poster A4 copy.jpg" alt="Desain Poster Promosi">
+                </div>
+                <div class="portfolio-info">
+                    <h3>Desain Poster Promosi</h3>
+                    <p>Poster promosi typography simple dan eye catching.</p>
+                </div>
+            </div>
+
+            <!--Desain 3-->
+            <div class="portfolio-item desain">
+                <div class="portfolio-img">
+                    <span class="category-badge">Desain Grafis</span>
+                    <img src="Coffee Series.jpg" alt="Desain Poster Promosi">
+                </div>
+                <div class="portfolio-info">
+                    <h3>Desain Poster Promosi</h3>
+                    <p>Poster promosi typography simple dan eye catching.</p>
+                </div>
+            </div>
+
+            <!--Desain 3-->
+            <div class="portfolio-item desain">
+                <div class="portfolio-img">
+                    <span class="category-badge">Desain Grafis</span>
+                    <img src="30x120 copy_20261005_140229.jpg" alt="Desain Poster Promosi">
+                </div>
+                <div class="portfolio-info">
+                    <h3>Desain Poster Promosi</h3>
+                    <p>Poster promosi typography simple dan eye catching.</p>
+                </div>
+            </div>
+
+            <!--Desain 2-->
+            <div class="portfolio-item desain">
+                <div class="portfolio-img">
+                    <span class="category-badge">Desain Grafis</span>
+                    <img src="Starwars Poster.jpg" alt="Desain Poster Promosi">
+                </div>
+                <div class="portfolio-info">
+                    <h3>Desain Movie Poster</h3>
+                    <p>Poster film penggabungan banyak karakter, lata, dan pencahayaan yang keren.</p>
+                </div>
+            </div>
+
+            <!--Desain 4-->
+            <div class="portfolio-item desain">
+                <div class="portfolio-img">
+                    <span class="category-badge">Desain Grafis</span>
+                    <img src="Gambar Digital 1.jpg" alt="Desain Poster Promosi">
+                </div>
+                <div class="portfolio-info">
+                    <h3>Desain Poster Promosi</h3>
+                    <p>Poster promosi typography simple dan eye catching.</p>
+                </div>
+            </div>
+
+            <!--Desain 5-->
+            <div class="portfolio-item desain">
+                <div class="portfolio-img">
+                    <span class="category-badge">Desain Grafis</span>
+                    <img src="Gambar Digital 2.jpg" alt="Desain Poster Promosi">
+                </div>
+                <div class="portfolio-info">
+                    <h3>Desain Poster Promosi</h3>
+                    <p>Poster promosi typography simple dan eye catching.</p>
+                </div>
+            </div>
+
+            <!--Desain 6-->
+            <div class="portfolio-item desain">
+                <div class="portfolio-img">
+                    <span class="category-badge">Desain Grafis</span>
+                    <img src="Gambar Digital 3.jpg" alt="Desain Poster Promosi">
+                </div>
+                <div class="portfolio-info">
+                    <h3>Desain Poster Promosi</h3>
+                    <p>Poster promosi typography simple dan eye catching.</p>
+                </div>
+            </div>
+
+            <!--Desain 7-->
+            <div class="portfolio-item desain">
+                <div class="portfolio-img">
+                    <span class="category-badge">Desain Grafis</span>
+                    <img src="Gambar Digital 4.jpg" alt="Desain Poster Promosi">
+                </div>
+                <div class="portfolio-info">
+                    <h3>Desain Poster Promosi</h3>
+                    <p>Poster promosi typography simple dan eye catching.</p>
+                </div>
+            </div>
+
+            <!--Desain 7-->
+            <div class="portfolio-item desain">
+                <div class="portfolio-img">
+                    <span class="category-badge">Desain Grafis</span>
+                    <img src="Gambar Digital 5.jpg" alt="Desain Poster Promosi">
+                </div>
+                <div class="portfolio-info">
+                    <h3>Desain Poster Promosi</h3>
+                    <p>Poster promosi typography simple dan eye catching.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MODAL POPUP MEDIA (FOTO/VIDEO PORTOFOLIO) -->
+    <div class="modal" id="mediaModal">
+        <span class="modal-close" onclick="closeMediaModal()">&times;</span>
+        <img class="modal-content" id="modalImg" style="display: none;">
+        <video class="modal-video" id="modalVideo" controls style="display: none;"></video>
+        <div class="modal-caption" id="modalCaption"></div>
+    </div>
+
+    <!-- MODAL POPUP PRICE LIST (DAFTAR HARGA) -->
+    <div class="modal" id="priceModal">
+        <div class="price-modal-card">
+            <span class="modal-close" style="color: var(--dark); top: 15px; right: 20px;" onclick="closePriceModal()">&times;</span>
+            <h3 id="priceTitle">Daftar Harga</h3>
+            <div id="priceContent">
+                <!-- Isi daftar harga akan dimasukkan secara dinamis via JavaScript -->
+            </div>
+            <a href="https://wa.me/6281312142717" target="_blank" class="price-order-btn">💬 Pesan Sekarang via WhatsApp</a>
+        </div>
+    </div>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact" id="kontak">
+        <h2 class="section-title">Hubungi <span>Kami</span></h2>
+        <p>Tertarik untuk berkolaborasi atau ingin melihat detail dan memesan layanan kami secara langsung? Jangan ragu untuk menghubungi kami melalui WhatsApp atau kunjungi toko Shopee kami!</p>
+        
+        <div class="contact-buttons">
+            <a href="https://wa.me/6281312142717" target="_blank" class="contact-btn btn-wa">
+                <span style="font-size: 1.2rem;">💬</span> Chat WhatsApp
+            </a>
+            <a href="https://shopee.co.id/frame.finesse" target="_blank" class="contact-btn btn-shopee">
+                <span style="font-size: 1.2rem;">🛒</span> Kunjungi Shopee
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 <span>Frame Finesse</span>. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // 1. FILTER PORTOFOLIO
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                const filterValue = button.getAttribute('data-filter');
+
+                portfolioItems.forEach(item => {
+                    if (filterValue === 'semua' || item.classList.contains(filterValue)) {
+                        item.style.display = 'block'; 
+                    } else {
+                        item.style.display = 'none';  
+                    }
+                });
+            });
+        });
+
+        // 2. FULLSCREEN POPUP MEDIA (PORTOFOLIO)
+        const mediaModal = document.getElementById('mediaModal');
+        const modalImg = document.getElementById('modalImg');
+        const modalVideo = document.getElementById('modalVideo');
+        const modalCaption = document.getElementById('modalCaption');
+
+        portfolioItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const titleTag = item.querySelector('.portfolio-info h3');
+                const videoSrc = item.getAttribute('data-video');
+
+                modalCaption.innerText = titleTag ? titleTag.innerText : '';
+
+                if (videoSrc) {
+                    modalImg.style.display = 'none';
+                    modalVideo.style.display = 'block';
+                    modalVideo.src = videoSrc;
+                    modalVideo.play();
+                } else {
+                    const imgTag = item.querySelector('.portfolio-img img');
+                    if (imgTag) {
+                        modalVideo.style.display = 'none';
+                        modalVideo.pause();
+                        modalImg.style.display = 'block';
+                        modalImg.src = imgTag.src;
+                    }
+                }
+                mediaModal.style.display = 'flex';
+            });
+        });
+
+        function closeMediaModal() {
+            mediaModal.style.display = 'none';
+            modalVideo.pause();
+            modalVideo.src = "";
+        }
+
+        mediaModal.addEventListener('click', (e) => {
+            if (e.target === mediaModal) closeMediaModal();
+        });
+
+        // 3. DAFTAR HARGA JASA (DATA HARGA BISA KAMU EDIT DI SINI)
+        const priceData = {
+            photo: {
+                title: "Estimasi Biaya Photo Editing",
+                items: [
+                    { name: "Hapus Objek / Clean Up", desc: "Menghapus 1-3 objek pengganggu", price: "Rp 15.000 / foto" },
+                    { name: "Retouching Wajah & Kulit", desc: "Penghalusan kulit & koreksi jerawat", price: "Rp 25.000 / foto" },
+                    { name: "Ganti Background & Tone", desc: "Manipulasi latar & color grading", price: "Rp 35.000 / foto" },
+                    { name: "Paket Bulk (10+ Foto)", desc: "Untuk foto acara / pernikahan", price: "Hubungi WA" }
+                ]
+            },
+            video: {
+                title: "Estimasi Biaya Video Editing",
+                items: [
+                    { name: "Shorts / Reels / TikTok", desc: "Durasi < 1 menit + teks dinamis", price: "Rp 50.000 / video" },
+                    { name: "Video Youtube / Vlog", desc: "Durasi 5-10 menit + pemotongan & audio", price: "Rp 150.000" },
+                    { name: "Cinematic / Color Grading", desc: "Pewarnaan kelas tinggi & efek sinematik", price: "Rp 250.000" }
+                ]
+            },
+            motion: {
+                title: "Estimasi Biaya Motion Graphics",
+                items: [
+                    { name: "Animasi Logo / Intro Youtube", desc: "Durasi 5-10 detik resolusi Full HD", price: "Rp 100.000" },
+                    { name: "Title Animation / Bumper", desc: "Animasi teks & judul acara", price: "Rp 75.000" },
+                    { name: "Custom Motion Graphic", desc: "Animasi kompleks dengan After Effects", price: "Rp 200.000+" }
+                ]
+            },
+            desain: {
+                title: "Estimasi Biaya Desain Grafis",
+                items: [
+                    { name: "Poster / Pamflet / Flyer", desc: "Desain siap cetak / posting sosmed", price: "Rp 35.000" },
+                    { name: "Desain Feeds IG (3-Grid)", desc: "Layout menyatu & estetis", price: "Rp 85.000" },
+                    { name: "Logo Vektor / Branding", desc: "Desain logo original + file master", price: "Rp 150.000" }
+                ]
+            }
+        };
+
+        const priceModal = document.getElementById('priceModal');
+        const priceTitle = document.getElementById('priceTitle');
+        const priceContent = document.getElementById('priceContent');
+
+        function openPriceModal(category) {
+            const data = priceData[category];
+            if (data) {
+                priceTitle.innerText = data.title;
+                let html = '';
+                data.items.forEach(item => {
+                    html += `
+                        <div class="price-list-item">
+                            <div>
+                                <span class="item-name">${item.name}</span>
+                                <span class="item-desc">${item.desc}</span>
+                            </div>
+                            <span class="item-price">${item.price}</span>
+                        </div>
+                    `;
+                });
+                priceContent.innerHTML = html;
+                priceModal.style.display = 'flex';
+            }
+        }
+
+        function closePriceModal() {
+            priceModal.style.display = 'none';
+        }
+
+        priceModal.addEventListener('click', (e) => {
+            if (e.target === priceModal) closePriceModal();
+        });
+    </script>
+</body>
+</html>
